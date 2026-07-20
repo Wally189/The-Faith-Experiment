@@ -8,9 +8,10 @@
 <style>
 .lesson-dashboard{margin:30px 0;padding:26px;border:1px solid var(--line);border-radius:20px;background:#fff;box-shadow:0 7px 18px rgba(16,24,32,.05)}
 .lesson-dashboard h2{margin:5px 0 8px}.lesson-dashboard p{margin-top:0}.lesson-select{width:100%;padding:15px 16px;border:2px solid var(--gold);border-radius:12px;background:var(--paper);color:var(--ink);font:700 16px Arial,sans-serif}.course-progress-line{height:10px;margin:18px 0 8px;background:#ddd2ba;border-radius:20px;overflow:hidden}.course-progress-line span{display:block;height:100%;width:0;background:var(--blue)}
+.course-purpose{max-width:900px;margin:22px 0 30px;padding:0 4px;font-size:20px;line-height:1.65;color:var(--ink)}.course-purpose strong{color:var(--blue)}
 .method-accordion{border:1px solid var(--line);border-radius:18px;background:#fff;overflow:hidden;box-shadow:0 7px 18px rgba(16,24,32,.05)}.method-accordion>summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:18px;padding:22px 24px}.method-accordion>summary::-webkit-details-marker{display:none}.method-accordion>summary h2{margin:5px 0 0}.method-accordion[open] .summary-action{font-size:0}.method-accordion[open] .summary-action::after{content:'Close ×';font-size:12px}.method-body{padding:0 24px 26px;border-top:1px solid var(--line)}
 .lesson-card{position:relative}.completion-badge{display:inline-block;margin-top:12px;padding:5px 10px;border-radius:20px;background:#ece6d6;color:var(--stone);font:700 11px Arial,sans-serif;text-transform:uppercase;letter-spacing:.06em}.lesson-card.completed{border-color:#708a65;box-shadow:0 0 0 2px rgba(112,138,101,.15)}.lesson-card.completed .completion-badge{background:#dfead9;color:#36552e}.lesson-card.locked{opacity:.68}
-@media(max-width:900px){.lesson-dashboard{padding:20px 16px}.method-accordion>summary{align-items:flex-start;flex-direction:column}}
+@media(max-width:900px){.lesson-dashboard{padding:20px 16px}.course-purpose{font-size:18px;padding:0}.method-accordion>summary{align-items:flex-start;flex-direction:column}}
 </style>
 </head>
 <body>
@@ -21,6 +22,7 @@
 <h1>Foundations of the Catholic faith</h1>
 <p class="lead">A guided journey through Joseph Deharbe’s substantial catechism, read carefully alongside Scripture, the modern Catechism and current Church teaching.</p>
 <div class="course-band"><strong>This course is built around Joseph Deharbe’s <em>A Complete Catechism of the Catholic Religion</em>.</strong> Deharbe provides the route through the subject; Scripture, the modern Catechism and the living teaching of the Church guide how it is understood today.</div>
+<p class="course-purpose"><strong>Why begin with Deharbe?</strong> Catholicism has been taught, studied and handed on across many centuries. An older catechism lets us follow that faith in a sustained and orderly way, while the Church’s modern teaching helps us recognise what is enduring, what needs fuller explanation and how the same truths are expressed today. The purpose is not merely to finish a book, but to understand what Catholics believe, think carefully about it, and form conclusions that are genuinely your own because they have been tested against the sources.</p>
 
 <section class="lesson-dashboard" aria-labelledby="choose-lesson-title">
 <span class="kicker">Your course</span><h2 id="choose-lesson-title">Choose a lesson</h2>
