@@ -15,6 +15,17 @@
     { id:'lesson-12', number:12, title:'The lay apostolate', available:false }
   ];
 
+  const blockAliases = [
+    ['course-block-1', 'god-and-revelation'],
+    ['course-block-2', 'christ-and-salvation'],
+    ['course-block-3', 'sacraments-and-christian-life'],
+    ['course-block-4', 'prayer-and-mission']
+  ];
+  blockAliases.forEach(([newId, oldId]) => {
+    const block = document.getElementById(oldId);
+    if (block) block.id = newId;
+  });
+
   let completed;
   try { completed = new Set(JSON.parse(localStorage.getItem(storageKey) || '[]')); }
   catch { completed = new Set(); }
