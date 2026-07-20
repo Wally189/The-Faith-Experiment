@@ -4,83 +4,45 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Course | The Faith Experiment</title>
-<link rel="stylesheet" href="styles.css?v=20260719-5">
+<link rel="stylesheet" href="styles.css?v=20260720-2">
+<style>
+.lesson-dashboard{margin:30px 0;padding:26px;border:1px solid var(--line);border-radius:20px;background:#fff;box-shadow:0 7px 18px rgba(16,24,32,.05)}
+.lesson-dashboard h2{margin:5px 0 8px}.lesson-dashboard p{margin-top:0}.lesson-select{width:100%;padding:15px 16px;border:2px solid var(--gold);border-radius:12px;background:var(--paper);color:var(--ink);font:700 16px Arial,sans-serif}.course-progress-line{height:10px;margin:18px 0 8px;background:#ddd2ba;border-radius:20px;overflow:hidden}.course-progress-line span{display:block;height:100%;width:0;background:var(--blue)}
+.method-accordion{border:1px solid var(--line);border-radius:18px;background:#fff;overflow:hidden;box-shadow:0 7px 18px rgba(16,24,32,.05)}.method-accordion>summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:18px;padding:22px 24px}.method-accordion>summary::-webkit-details-marker{display:none}.method-accordion>summary h2{margin:5px 0 0}.method-accordion[open] .summary-action{font-size:0}.method-accordion[open] .summary-action::after{content:'Close ×';font-size:12px}.method-body{padding:0 24px 26px;border-top:1px solid var(--line)}
+.lesson-card{position:relative}.completion-badge{display:inline-block;margin-top:12px;padding:5px 10px;border-radius:20px;background:#ece6d6;color:var(--stone);font:700 11px Arial,sans-serif;text-transform:uppercase;letter-spacing:.06em}.lesson-card.completed{border-color:#708a65;box-shadow:0 0 0 2px rgba(112,138,101,.15)}.lesson-card.completed .completion-badge{background:#dfead9;color:#36552e}.lesson-card.locked{opacity:.68}
+@media(max-width:900px){.lesson-dashboard{padding:20px 16px}.method-accordion>summary{align-items:flex-start;flex-direction:column}}
+</style>
 </head>
 <body>
 <div class="app">
-<nav class="side-nav">
-<div class="side-logo">✠</div>
-<a href="index.html#home">⌂<br>Home</a>
-<a class="on" href="course.html">▤<br>Course</a>
-<a href="index.html#schedule">◫<br>Schedule</a>
-<a href="index.html#materials">▣<br>Materials</a>
-<a href="index.html#journal">✎<br>Journal</a>
-<a href="index.html#contact">✉<br>Contact</a>
-</nav>
-<div class="page-shell">
-<main class="view">
+<nav class="side-nav"><div class="side-logo">✠</div><a href="index.html#home">⌂<br>Home</a><a class="on" href="course.html">▤<br>Course</a><a href="index.html#schedule">◫<br>Schedule</a><a href="index.html#materials">▣<br>Materials</a><a href="index.html#journal">✎<br>Journal</a><a href="index.html#contact">✉<br>Contact</a></nav>
+<div class="page-shell"><main class="view">
 <span class="eyebrow">A public experiment in Catholic self-education</span>
 <h1>Foundations of the Catholic faith</h1>
 <p class="lead">A guided journey through Joseph Deharbe’s substantial catechism, read carefully alongside Scripture, the modern Catechism and current Church teaching.</p>
-<div class="course-band"><strong>This course is built around Joseph Deharbe’s <em>A Complete Catechism of the Catholic Religion</em>.</strong> Although it is an older work, it offers a clear and substantial introduction to the Catholic faith. Deharbe provides the route through the subject; Scripture, the modern Catechism and current Church teaching guide how it is understood today.</div>
+<div class="course-band"><strong>This course is built around Joseph Deharbe’s <em>A Complete Catechism of the Catholic Religion</em>.</strong> Deharbe provides the route through the subject; Scripture, the modern Catechism and the living teaching of the Church guide how it is understood today.</div>
+
+<section class="lesson-dashboard" aria-labelledby="choose-lesson-title">
+<span class="kicker">Your course</span><h2 id="choose-lesson-title">Choose a lesson</h2>
+<p>Select a published lesson, see whether you have completed it, and continue at your own pace.</p>
+<select id="lesson-select" class="lesson-select" aria-label="Choose a lesson"><option>Loading lessons…</option></select>
+<div class="course-progress-line"><span id="course-progress-fill"></span></div>
+<p id="course-progress-text" class="small">0 of 12 lessons completed</p>
+</section>
 
 <section class="section">
-<details class="course-accordion">
-<summary><span><span class="kicker">Primary historical text</span><strong>Joseph Deharbe</strong></span><span class="summary-action">Open details ＋</span></summary>
-<div class="accordion-body">
-<p class="plain-intro">An older but remarkably clear and substantial guide to the Catholic faith.</p>
-<div class="grid source-grid">
-<details class="card source-card" style="--c:var(--gold)"><summary><span class="label">Working edition</span><h3><em>A Complete Catechism of the Catholic Religion</em></h3><span class="card-toggle">View links ＋</span></summary><div class="card-details"><p>Translated by Rev. John Fander; sixth American edition; edited by Rev. James J. Fox and Rev. Thomas McMillan; New York, 1912.</p><p><a href="index.html#materials">Open the Materials page →</a></p></div></details>
-<details class="card source-card"><summary><span class="label">Controlling sources</span><h3>Old text, living Church</h3><span class="card-toggle">View links ＋</span></summary><div class="card-details"><p>Sacred Scripture, the <em>Catechism of the Catholic Church</em> and relevant magisterial sources guide interpretation.</p><p><a href="index.html#materials">Open the Materials page →</a></p></div></details>
-<details class="card source-card" style="--c:var(--gold)"><summary><span class="label">Supporting texts</span><h3>Memory and depth</h3><span class="card-toggle">View links ＋</span></summary><div class="card-details"><p>The English Penny Catechism supports recall; the Roman Catechism, Aquinas and the Fathers provide selected deeper readings.</p><p><a href="index.html#materials">Open the Materials page →</a></p></div></details>
-</div>
-</div>
+<details class="method-accordion">
+<summary><span><span class="kicker">The method</span><h2>How each lesson works</h2></span><span class="summary-action">Open ＋</span></summary>
+<div class="method-body"><p class="plain-intro">Each lesson is a guided sequence rather than a page of information.</p><div class="method-flow" aria-label="Lesson method"><div class="method-step"><span>1</span><strong>Encounter</strong><small>Write what you think first.</small></div><div class="method-arrow">→</div><div class="method-step"><span>2</span><strong>Read</strong><small>Work through Deharbe.</small></div><div class="method-arrow">→</div><div class="method-step"><span>3</span><strong>Notice</strong><small>Mark claims and unfamiliar words.</small></div><div class="method-arrow">→</div><div class="method-step"><span>4</span><strong>Distinguish</strong><small>Make the key idea clear.</small></div><div class="method-arrow">→</div><div class="method-step"><span>5</span><strong>Check</strong><small>Read Scripture and the Catechism.</small></div><div class="method-arrow">→</div><div class="method-step"><span>6</span><strong>Test</strong><small>Face objections honestly.</small></div><div class="method-arrow">→</div><div class="method-step"><span>7</span><strong>Write</strong><small>Explain what you now understand.</small></div></div></div>
 </details>
 </section>
 
-<section class="section method-section">
-<div class="section-head"><div><span class="kicker">The method</span><h2>How each lesson works</h2></div></div>
-<div class="method-flow" aria-label="Lesson method">
-<div class="method-step"><span>1</span><strong>Encounter</strong><small>Start with a real question.</small></div>
-<div class="method-arrow">→</div>
-<div class="method-step"><span>2</span><strong>Read</strong><small>Work through Deharbe.</small></div>
-<div class="method-arrow">→</div>
-<div class="method-step"><span>3</span><strong>Check</strong><small>Use Scripture and the Catechism.</small></div>
-<div class="method-arrow">→</div>
-<div class="method-step"><span>4</span><strong>Question</strong><small>Test objections honestly.</small></div>
-<div class="method-arrow">→</div>
-<div class="method-step"><span>5</span><strong>Write</strong><small>Recall it in your own words.</small></div>
-<div class="method-arrow">→</div>
-<div class="method-step"><span>6</span><strong>Explain</strong><small>Show what you now understand.</small></div>
-</div>
-</section>
+<section class="section"><details class="course-accordion"><summary><span><span class="kicker">Primary historical text</span><strong>Joseph Deharbe</strong></span><span class="summary-action">Open details ＋</span></summary><div class="accordion-body"><p class="plain-intro">An older but remarkably clear and substantial guide to the Catholic faith.</p><div class="grid source-grid"><details class="card source-card" style="--c:var(--gold)"><summary><span class="label">Working edition</span><h3><em>A Complete Catechism of the Catholic Religion</em></h3><span class="card-toggle">View details ＋</span></summary><div class="card-details"><p>Translated by Rev. John Fander; sixth American edition; edited by Rev. James J. Fox and Rev. Thomas McMillan; New York, 1912.</p></div></details><details class="card source-card"><summary><span class="label">Controlling sources</span><h3>Old text, living Church</h3><span class="card-toggle">View details ＋</span></summary><div class="card-details"><p>Sacred Scripture, the <em>Catechism of the Catholic Church</em> and relevant magisterial sources guide interpretation.</p></div></details><details class="card source-card" style="--c:var(--gold)"><summary><span class="label">Supporting texts</span><h3>Memory and depth</h3><span class="card-toggle">View details ＋</span></summary><div class="card-details"><p>The English Penny Catechism supports recall; the Roman Catechism, Aquinas and the Fathers provide selected deeper readings.</p></div></details></div></div></details></section>
 
-<section class="module-card" style="--module:var(--blue)"><div class="module-heading"><span class="kicker">Course block 1</span><h2>God and Revelation</h2><p>Reason, desire, revelation, Scripture and Tradition.</p></div><div class="grid">
-<a class="card" href="lesson-01.html"><span class="label">Lesson 1</span><h3>The God question</h3><p>Why human beings ask about God, what reason can discover, and where its limits lie.</p></a>
-<article class="card"><span class="label">Lesson 2</span><h3>What revelation is</h3><p>God reveals himself—not merely a collection of religious facts.</p></article>
-<article class="card"><span class="label">Lesson 3</span><h3>Scripture and Tradition</h3><p>Why Catholics refuse both a Bible without the Church and a tradition detached from Scripture.</p></article>
-</div></section>
-
-<section class="module-card" style="--module:var(--gold)"><div class="module-heading"><span class="kicker">Course block 2</span><h2>Christ and Salvation</h2><p>Incarnation, Cross, Resurrection, grace and redemption.</p></div><div class="grid">
-<article class="card" style="--c:var(--gold)"><span class="label">Lesson 4</span><h3>Who is Jesus?</h3><p>The historical question, the Gospel portraits and true God and true man.</p></article>
-<article class="card" style="--c:var(--gold)"><span class="label">Lesson 5</span><h3>Cross and Resurrection</h3><p>What Christians mean by salvation—and what they do not mean.</p></article>
-<article class="card" style="--c:var(--gold)"><span class="label">Lesson 6</span><h3>Grace and freedom</h3><p>Gift, response, justification, merit and the false choice between God’s action and ours.</p></article>
-</div></section>
-
-<section class="module-card" style="--module:#55705f"><div class="module-heading"><span class="kicker">Course block 3</span><h2>Sacraments and Christian Life</h2><p>Worship, sacramental life, virtue and conscience.</p></div><div class="grid">
-<article class="card"><span class="label">Lesson 7</span><h3>Why matter matters</h3><p>Incarnation, signs and the sacramental imagination.</p></article>
-<article class="card"><span class="label">Lesson 8</span><h3>The Eucharistic centre</h3><p>Passover, sacrifice, presence, communion and mission.</p></article>
-<article class="card"><span class="label">Lesson 9</span><h3>Conscience and virtue</h3><p>Why Catholic morality is more than rules or private sincerity.</p></article>
-</div></section>
-
-<section class="module-card" style="--module:#66507d"><div class="module-heading"><span class="kicker">Course block 4</span><h2>Prayer and Mission</h2><p>Prayer, holiness, social doctrine and lay vocation.</p></div><div class="grid">
-<article class="card" style="--c:var(--gold)"><span class="label">Lesson 10</span><h3>Learning to pray</h3><p>Prayer as relationship, discipline and transformation.</p></article>
-<article class="card" style="--c:var(--gold)"><span class="label">Lesson 11</span><h3>The common good</h3><p>Dignity, solidarity, subsidiarity and Catholic social doctrine in British and Irish life.</p></article>
-<article class="card" style="--c:var(--gold)"><span class="label">Lesson 12</span><h3>The lay apostolate</h3><p>How an educated faith becomes service rather than private religious collecting.</p></article>
-</div></section>
-</main>
-<footer class="footer">The old text supplies the route. Scripture and the living Magisterium supply the measure.</footer>
-</div>
-</div>
-</body>
-</html>
+<section class="module-card" style="--module:var(--blue)"><div class="module-heading"><span class="kicker">Course block 1</span><h2>God and Revelation</h2><p>Reason, desire, revelation, Scripture and Tradition.</p></div><div class="grid"><a class="card lesson-card" data-lesson-id="lesson-01" href="lesson-01.html?v=20260720-2"><span class="label">Lesson 1</span><h3>The God question</h3><p>Why human beings ask about God, what reason can discover, and where its limits lie.</p><span class="completion-badge">Not completed</span></a><article class="card lesson-card locked" data-lesson-id="lesson-02"><span class="label">Lesson 2</span><h3>What revelation is</h3><p>God reveals himself—not merely a collection of religious facts.</p><span class="completion-badge">Not completed</span></article><article class="card lesson-card locked" data-lesson-id="lesson-03"><span class="label">Lesson 3</span><h3>Scripture and Tradition</h3><p>Why Catholics refuse both a Bible without the Church and a tradition detached from Scripture.</p><span class="completion-badge">Not completed</span></article></div></section>
+<section class="module-card" style="--module:var(--gold)"><div class="module-heading"><span class="kicker">Course block 2</span><h2>Christ and Salvation</h2><p>Incarnation, Cross, Resurrection, grace and redemption.</p></div><div class="grid"><article class="card lesson-card locked" data-lesson-id="lesson-04" style="--c:var(--gold)"><span class="label">Lesson 4</span><h3>Who is Jesus?</h3><p>The historical question, the Gospel portraits and true God and true man.</p><span class="completion-badge">Not completed</span></article><article class="card lesson-card locked" data-lesson-id="lesson-05" style="--c:var(--gold)"><span class="label">Lesson 5</span><h3>Cross and Resurrection</h3><p>What Christians mean by salvation—and what they do not mean.</p><span class="completion-badge">Not completed</span></article><article class="card lesson-card locked" data-lesson-id="lesson-06" style="--c:var(--gold)"><span class="label">Lesson 6</span><h3>Grace and freedom</h3><p>Gift, response, justification and merit.</p><span class="completion-badge">Not completed</span></article></div></section>
+<section class="module-card" style="--module:#55705f"><div class="module-heading"><span class="kicker">Course block 3</span><h2>Sacraments and Christian Life</h2><p>Worship, sacramental life, virtue and conscience.</p></div><div class="grid"><article class="card lesson-card locked" data-lesson-id="lesson-07"><span class="label">Lesson 7</span><h3>Why matter matters</h3><p>Incarnation, signs and the sacramental imagination.</p><span class="completion-badge">Not completed</span></article><article class="card lesson-card locked" data-lesson-id="lesson-08"><span class="label">Lesson 8</span><h3>The Eucharistic centre</h3><p>Passover, sacrifice, presence, communion and mission.</p><span class="completion-badge">Not completed</span></article><article class="card lesson-card locked" data-lesson-id="lesson-09"><span class="label">Lesson 9</span><h3>Conscience and virtue</h3><p>Why Catholic morality is more than rules or private sincerity.</p><span class="completion-badge">Not completed</span></article></div></section>
+<section class="module-card" style="--module:#66507d"><div class="module-heading"><span class="kicker">Course block 4</span><h2>Prayer and Mission</h2><p>Prayer, holiness, social doctrine and lay vocation.</p></div><div class="grid"><article class="card lesson-card locked" data-lesson-id="lesson-10" style="--c:var(--gold)"><span class="label">Lesson 10</span><h3>Learning to pray</h3><p>Prayer as relationship, discipline and transformation.</p><span class="completion-badge">Not completed</span></article><article class="card lesson-card locked" data-lesson-id="lesson-11" style="--c:var(--gold)"><span class="label">Lesson 11</span><h3>The common good</h3><p>Dignity, solidarity, subsidiarity and Catholic social doctrine.</p><span class="completion-badge">Not completed</span></article><article class="card lesson-card locked" data-lesson-id="lesson-12" style="--c:var(--gold)"><span class="label">Lesson 12</span><h3>The lay apostolate</h3><p>How an educated faith becomes service.</p><span class="completion-badge">Not completed</span></article></div></section>
+</main><footer class="footer">The old text supplies the route. Scripture and the living Magisterium supply the measure.</footer></div></div>
+<script src="faith-course.js?v=20260720-2"></script>
+</body></html>
