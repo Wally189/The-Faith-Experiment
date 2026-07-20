@@ -34,3 +34,5 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+# Redeploy marker: lesson navigation and persistent completion controls, 2026-07-20
