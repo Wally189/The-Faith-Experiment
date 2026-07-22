@@ -23,7 +23,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Apply approved footer wording
+      - name: Apply approved footer and certificate wording
         run: |
           python - <<'PY'
           from pathlib import Path
@@ -32,8 +32,9 @@ jobs:
           for path in Path('.').rglob('*'):
               if path.is_file() and path.suffix.lower() in {'.html', '.js', '.css'}:
                   text = path.read_text(encoding='utf-8')
-                  if old in text:
-                      path.write_text(text.replace(old, new), encoding='utf-8')
+                  text = text.replace(old, new)
+                  text = text.replace('See the proposed completion framework for this course.','Certificate framework not yet released.')
+                  path.write_text(text, encoding='utf-8')
           PY
       - name: Configure Pages
         uses: actions/configure-pages@v5
