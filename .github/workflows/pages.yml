@@ -23,7 +23,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Apply approved footer and certificate wording
+      - name: Apply approved footer, certificate and accessibility wording
         run: |
           python - <<'PY'
           from pathlib import Path
@@ -34,6 +34,12 @@ jobs:
                   text = path.read_text(encoding='utf-8')
                   text = text.replace(old, new)
                   text = text.replace('See the proposed completion framework for this course.','Certificate framework not yet released.')
+                  if path.suffix.lower() == '.html':
+                      text = text.replace('<div class="logo">✠</div>', '<div class="logo" aria-hidden="true">✠</div>')
+                      text = text.replace('</style>', '@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto!important}*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}</style>', 1)
+                      text = text.replace('outline:none}.row h3', 'outline:3px solid rgba(198,161,91,.55);outline-offset:2px}.row h3')
+                      text = text.replace('text-decoration:underline;outline:none}', 'text-decoration:underline;outline:3px solid rgba(198,161,91,.55);outline-offset:3px}')
+                      text = text.replace("links.forEach(a=>a.classList.toggle('on',a.dataset.n===key))", "links.forEach(a=>{const active=a.dataset.n===key;a.classList.toggle('on',active);if(active)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')})")
                   path.write_text(text, encoding='utf-8')
           PY
       - name: Configure Pages
