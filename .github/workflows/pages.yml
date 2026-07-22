@@ -23,6 +23,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Apply approved footer wording
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          old = 'This website has been built with the assistance of AI tools. Where appropriate this has been cross validated with Magnifica Humanae'
+          new = 'This website has been built with the assistance of AI tools. Where appropriate, content has been checked against Magnifica Humanae and relevant authoritative Catholic sources.'
+          for path in Path('.').rglob('*'):
+              if path.is_file() and path.suffix.lower() in {'.html', '.js', '.css'}:
+                  text = path.read_text(encoding='utf-8')
+                  if old in text:
+                      path.write_text(text.replace(old, new), encoding='utf-8')
+          PY
       - name: Configure Pages
         uses: actions/configure-pages@v5
         with:
@@ -34,5 +46,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
-# Redeploy marker: lesson navigation and persistent completion controls, 2026-07-20
