@@ -62,7 +62,7 @@
     const contact = document.querySelector('[data-v="contact"], #contact[data-section], section#contact');
     if (!contact || contact.dataset.platformContact === 'true') return;
     const existingForm = contact.querySelector('form');
-    const existingContainer = existingForm?.closest('.plan,.card,.platform-contact-layout');
+    const existingContainer = existingForm?.closest('.plan') || existingForm?.closest('.card') || existingForm?.closest('.platform-contact-layout');
     const mailLink = contact.querySelector('a[href^="mailto:"]');
     if (existingContainer) existingContainer.outerHTML = contactMarkup();
     else if (existingForm) existingForm.outerHTML = contactMarkup();
